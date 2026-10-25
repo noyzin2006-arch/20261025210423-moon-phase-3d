@@ -1,8 +1,0 @@
-lroc_color_2k.jpg	2048x1024	457942 bytes	sha256=f7130a1822681fa7512d7dcfd40db8c10b9ba4f06777910348698260ed7a2170
-  来源: https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg
-  内容: LROC 彩色图（等距柱状投影，0° 经线居中）
-  授权: NASA 公开领域素材（NASA Media Usage Guidelines，含 3D 贴图条款）；须署名 NASA SVS CGI Moon Kit。
-ldem_3_8bit.jpg	1024x512	111552 bytes	sha256=6d93f887e7d8bedfe35ab89ba785e5e3ca12381bd092a5e6abe2c707dda8bb98
-  来源: https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_3_8bit.jpg
-  内容: LOLA 高程/位移图（8 位灰度）
-  授权: NASA 公开领域素材（NASA Media Usage Guidelines，含 3D 贴图条款）；须署名 NASA SVS CGI Moon Kit。
