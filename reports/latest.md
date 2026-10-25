@@ -10,7 +10,8 @@
 
 | 项 | 值 |
 |---|---|
-| 被测源码 commit | `845398198d9c6f8628eb6fbf45009921ccb9743e`（证据提交见 §10 末尾） |
+| 被测源码 commit | `845398198d9c6f8628eb6fbf45009921ccb9743e` |
+| 证据提交 commit | `ee1dff77bf66af0eb6abdc3971f7f5ec772d0082`（= 被测 commit 的直接子提交，**只增加 `reports/latest.md` 与 `handoff/session.md` 两个文档**，源码与被测版本逐字节相同） |
 | 操作系统 | macOS 26.4.1 (arm64) |
 | Node.js | v26.0.0 |
 | npm | 11.12.1 |
