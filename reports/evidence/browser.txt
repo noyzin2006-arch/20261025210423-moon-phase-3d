@@ -1,0 +1,27 @@
+
+> moon-phase-3d@1.0.0 test:e2e
+> playwright test
+
+(node:62565) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:62566) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+  ✓   1 [desktop] › tests/browser/moon.spec.js:49:3 › 月相观测室 › 首屏加载：无 console 错误、无 pageerror、无跨源请求 (2.9s)
+  ✓   2 [desktop] › tests/browser/moon.spec.js:64:3 › 月相观测室 › 改日期：月相名、照明比例、同一时刻同步更新 (536ms)
+  ✓   3 [desktop] › tests/browser/moon.spec.js:85:3 › 月相观测室 › 非法日期：就地报错并保留上一份合法快照 (654ms)
+  ✓   4 [desktop] › tests/browser/moon.spec.js:113:3 › 月相观测室 › 播放与暂停：虚拟时钟推进，Esc 暂停 (2.9s)
+  ✓   5 [desktop] › tests/browser/moon.spec.js:135:3 › 月相观测室 › 键盘可完成核心操作，焦点可见 (1.6s)
+  ✓   6 [desktop] › tests/browser/moon.spec.js:186:3 › 月相观测室 › 响应式：1440 与 375 无横向滚动 (1.6s)
+  ✓   7 [desktop] › tests/browser/moon.spec.js:201:3 › 月相观测室 › NASA 贴图 404 时退回程序化纹理，页面不空 (2.7s)
+  ✓   8 [desktop] › tests/browser/moon.spec.js:216:3 › 月相观测室 › WebGL 失效时切换平面月相并说明原因 (1.6s)
+  ✓   9 [desktop] › tests/browser/moon.spec.js:229:3 › 月相观测室 › 截图证据：默认 / 满月 / 上弦 / 下弦 / 错误态 / 2D 降级 (9.2s)
+(node:62656) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+  ✓  10 [mobile] › tests/browser/mobile.spec.js:6:3 › 移动端 › 375px 下无横向滚动，主要控件可点区域 ≥ 44px (1.5s)
+  ✓  11 [mobile] › tests/browser/mobile.spec.js:20:3 › 移动端 › 竖向滚动不被画布手势劫持 (213ms)
+  ✓  12 [mobile] › tests/browser/mobile.spec.js:28:3 › 移动端 › 手机上日期与指标仍然可用 (429ms)
+
+  12 passed (27.2s)

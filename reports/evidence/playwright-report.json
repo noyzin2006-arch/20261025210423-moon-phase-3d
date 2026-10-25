@@ -112,12 +112,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2756,
+                      "duration": 2947,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-25T13:59:52.593Z",
+                      "startTime": "2026-10-25T14:09:55.961Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -146,12 +146,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 462,
+                      "duration": 536,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-25T13:59:55.498Z",
+                      "startTime": "2026-10-25T14:09:59.154Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -166,7 +166,7 @@
             },
             {
               "title": "非法日期：就地报错并保留上一份合法快照",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -179,48 +179,18 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 332,
-                      "error": {
-                        "message": "Error: page.fill: Error: Malformed value\nCall log:\n\u001b[2m  - waiting for locator('#date-input')\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"date\" id=\"date-input\" min=\"2000-01-01\" max=\"2035-12-31\" aria-invalid=\"false\" aria-errormessage=\"\" class=\"field__control\" aria-describedby=\"date-message\"/>\u001b[22m\n\u001b[2m    - fill(\"2026-02-30\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n",
-                        "stack": "Error: page.fill: Error: Malformed value\nCall log:\n\u001b[2m  - waiting for locator('#date-input')\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"date\" id=\"date-input\" min=\"2000-01-01\" max=\"2035-12-31\" aria-invalid=\"false\" aria-errormessage=\"\" class=\"field__control\" aria-describedby=\"date-message\"/>\u001b[22m\n\u001b[2m    - fill(\"2026-02-30\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n\n    at /Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js:108:16",
-                        "location": {
-                          "file": "/Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js",
-                          "column": 16,
-                          "line": 108
-                        },
-                        "snippet": "  106 |     // 原生日期控件不接受 2026-02-30 这类不存在的日期（会落成空值），\n  107 |     // 因此分别验证「不存在（落成空值）」与「超出范围」两条路径。\n> 108 |     await page.fill('#date-input', '2026-02-30');\n      |                ^\n  109 |     await page.dispatchEvent('#date-input', 'change');\n  110 |     await page.waitForTimeout(120);\n  111 |     await expect(page.locator('#date-input')).toHaveAttribute('aria-invalid', 'true');"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js",
-                            "column": 16,
-                            "line": 108
-                          },
-                          "message": "Error: page.fill: Error: Malformed value\nCall log:\n\u001b[2m  - waiting for locator('#date-input')\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"date\" id=\"date-input\" min=\"2000-01-01\" max=\"2035-12-31\" aria-invalid=\"false\" aria-errormessage=\"\" class=\"field__control\" aria-describedby=\"date-message\"/>\u001b[22m\n\u001b[2m    - fill(\"2026-02-30\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n\n\n  106 |     // 原生日期控件不接受 2026-02-30 这类不存在的日期（会落成空值），\n  107 |     // 因此分别验证「不存在（落成空值）」与「超出范围」两条路径。\n> 108 |     await page.fill('#date-input', '2026-02-30');\n      |                ^\n  109 |     await page.dispatchEvent('#date-input', 'change');\n  110 |     await page.waitForTimeout(120);\n  111 |     await expect(page.locator('#date-input')).toHaveAttribute('aria-invalid', 'true');\n    at /Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js:108:16"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 654,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-25T13:59:55.966Z",
+                      "startTime": "2026-10-25T14:09:59.698Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/sheng/Projects/20261025210423-moon-phase-3d/test-results/moon-月相观测室-非法日期：就地报错并保留上一份合法快照-desktop/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js",
-                        "column": 16,
-                        "line": 108
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "4322acd64a6062be6cdb-5a3bca938111555e9412",
@@ -241,15 +211,15 @@
                   "projectName": "desktop",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2939,
+                      "duration": 2917,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-25T13:59:56.594Z",
+                      "startTime": "2026-10-25T14:10:00.360Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -259,12 +229,12 @@
               ],
               "id": "4322acd64a6062be6cdb-cfb1a971932c9e9347eb",
               "file": "moon.spec.js",
-              "line": 108,
+              "line": 113,
               "column": 3
             },
             {
               "title": "键盘可完成核心操作，焦点可见",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -275,55 +245,25 @@
                   "projectName": "desktop",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 208,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m-1\u001b[39m\nReceived:   \u001b[31m-1\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m-1\u001b[39m\nReceived:   \u001b[31m-1\u001b[39m\n    at /Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js:170:48",
-                        "location": {
-                          "file": "/Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js",
-                          "column": 48,
-                          "line": 170
-                        },
-                        "snippet": "  168 |       visited.push(id);\n  169 |     }\n> 170 |     expect(visited.indexOf('#timeline-range')).toBeGreaterThan(-1);\n      |                                                ^\n  171 |     expect(visited.indexOf('#timeline-range')).toBeLessThan(visited.indexOf('button') + 1);\n  172 |     expect(visited.some((item) => item.includes('15 度'))).toBe(true);\n  173 |     expect(visited.some((item) => item === '.faq__question')).toBe(true);"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js",
-                            "column": 48,
-                            "line": 170
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m-1\u001b[39m\nReceived:   \u001b[31m-1\u001b[39m\n\n  168 |       visited.push(id);\n  169 |     }\n> 170 |     expect(visited.indexOf('#timeline-range')).toBeGreaterThan(-1);\n      |                                                ^\n  171 |     expect(visited.indexOf('#timeline-range')).toBeLessThan(visited.indexOf('button') + 1);\n  172 |     expect(visited.some((item) => item.includes('15 度'))).toBe(true);\n  173 |     expect(visited.some((item) => item === '.faq__question')).toBe(true);\n    at /Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js:170:48"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 1610,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-25T13:59:59.682Z",
+                      "startTime": "2026-10-25T14:10:03.286Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/sheng/Projects/20261025210423-moon-phase-3d/test-results/moon-月相观测室-键盘可完成核心操作，焦点可见-desktop/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js",
-                        "column": 48,
-                        "line": 170
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "4322acd64a6062be6cdb-8fbb3b9ff7d29cf5bd4f",
               "file": "moon.spec.js",
-              "line": 130,
+              "line": 135,
               "column": 3
             },
             {
@@ -339,15 +279,15 @@
                   "projectName": "desktop",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1593,
+                      "duration": 1626,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-25T14:00:00.174Z",
+                      "startTime": "2026-10-25T14:10:04.902Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -357,7 +297,7 @@
               ],
               "id": "4322acd64a6062be6cdb-3ee5b566dd981800c8c4",
               "file": "moon.spec.js",
-              "line": 172,
+              "line": 186,
               "column": 3
             },
             {
@@ -373,15 +313,15 @@
                   "projectName": "desktop",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2732,
+                      "duration": 2744,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-25T14:00:01.921Z",
+                      "startTime": "2026-10-25T14:10:06.539Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -391,12 +331,12 @@
               ],
               "id": "4322acd64a6062be6cdb-d5bb31b5313e56d1443b",
               "file": "moon.spec.js",
-              "line": 187,
+              "line": 201,
               "column": 3
             },
             {
               "title": "WebGL 失效时切换平面月相并说明原因",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -407,103 +347,59 @@
                   "projectName": "desktop",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 90016,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js",
-                            "column": 16,
-                            "line": 223
-                          },
-                          "message": "Error: page.waitForSelector: Test timeout of 90000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.stage__canvas') to be visible\u001b[22m\n\u001b[2m    183 × locator resolved to hidden <canvas hidden=\"\" aria-hidden=\"true\" class=\"stage__canvas\"></canvas>\u001b[22m\n\n\n  221 |   test('WebGL 失效时切换平面月相并说明原因', async ({ page }) => {\n  222 |     await page.goto('/?nowebgl=1');\n> 223 |     await page.waitForSelector('.stage__canvas');\n      |                ^\n  224 |     await page.waitForTimeout(1200);\n  225 |\n  226 |     await expect(page.locator('.stage__overlay')).toHaveAttribute('data-visible', 'true');\n    at /Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js:223:16"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 1607,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-25T14:00:04.660Z",
+                      "startTime": "2026-10-25T14:10:09.289Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/sheng/Projects/20261025210423-moon-phase-3d/test-results/moon-月相观测室-WebGL-失效时切换平面月相并说明原因-desktop/error-context.md"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "4322acd64a6062be6cdb-ca64807abda14e09d51f",
               "file": "moon.spec.js",
-              "line": 202,
+              "line": 216,
               "column": 3
             },
             {
               "title": "截图证据：默认 / 满月 / 上弦 / 下弦 / 错误态 / 2D 降级",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 90000,
+                  "timeout": 240000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "desktop",
                   "projectName": "desktop",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 90018,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js",
-                            "column": 16,
-                            "line": 272
-                          },
-                          "message": "Error: page.waitForSelector: Test timeout of 90000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.stage__canvas') to be visible\u001b[22m\n\u001b[2m    168 × locator resolved to hidden <canvas hidden=\"\" aria-hidden=\"true\" class=\"stage__canvas\"></canvas>\u001b[22m\n\n\n  270 |\n  271 |     await page.goto('/?nowebgl=1');\n> 272 |     await page.waitForSelector('.stage__canvas');\n      |                ^\n  273 |     await page.waitForTimeout(1200);\n  274 |     await page.screenshot({ path: path.join(EVIDENCE, 'moon-1440-fallback-2d.png') });\n  275 |   });\n    at /Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/moon.spec.js:272:16"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 9233,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-25T14:01:34.977Z",
+                      "startTime": "2026-10-25T14:10:10.901Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/sheng/Projects/20261025210423-moon-phase-3d/test-results/moon-月相观测室-截图证据：默认-满月-上弦-下弦-错误态-2D-降级-desktop/error-context.md"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "4322acd64a6062be6cdb-390dbf74d8da3ff625c1",
               "file": "moon.spec.js",
-              "line": 215,
+              "line": 229,
               "column": 3
             }
           ]
@@ -536,15 +432,15 @@
                   "projectName": "mobile",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1617,
+                      "duration": 1494,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-25T14:03:05.708Z",
+                      "startTime": "2026-10-25T14:10:20.481Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -559,7 +455,7 @@
             },
             {
               "title": "竖向滚动不被画布手势劫持",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -570,50 +466,20 @@
                   "projectName": "mobile",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 1,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 310,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"pan-y\"\u001b[39m\nReceived string:    \u001b[31m\"none\"\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"pan-y\"\u001b[39m\nReceived string:    \u001b[31m\"none\"\u001b[39m\n    at /Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/mobile.spec.js:30:25",
-                        "location": {
-                          "file": "/Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/mobile.spec.js",
-                          "column": 25,
-                          "line": 30
-                        },
-                        "snippet": "  28 |       (node) => getComputedStyle(node).touchAction,\n  29 |     );\n> 30 |     expect(touchAction).toContain('pan-y');\n     |                         ^\n  31 |   });\n  32 |\n  33 |   test('手机上日期与指标仍然可用', async ({ page }) => {"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/mobile.spec.js",
-                            "column": 25,
-                            "line": 30
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"pan-y\"\u001b[39m\nReceived string:    \u001b[31m\"none\"\u001b[39m\n\n  28 |       (node) => getComputedStyle(node).touchAction,\n  29 |     );\n> 30 |     expect(touchAction).toContain('pan-y');\n     |                         ^\n  31 |   });\n  32 |\n  33 |   test('手机上日期与指标仍然可用', async ({ page }) => {\n    at /Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/mobile.spec.js:30:25"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 213,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-25T14:03:07.647Z",
+                      "startTime": "2026-10-25T14:10:22.204Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/sheng/Projects/20261025210423-moon-phase-3d/test-results/mobile-移动端-竖向滚动不被画布手势劫持-mobile/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/sheng/Projects/20261025210423-moon-phase-3d/tests/browser/mobile.spec.js",
-                        "column": 25,
-                        "line": 30
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "abb07b11bbd7ad334584-835143be27953595353f",
@@ -634,15 +500,15 @@
                   "projectName": "mobile",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 593,
+                      "duration": 429,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-25T14:03:08.330Z",
+                      "startTime": "2026-10-25T14:10:22.422Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -662,11 +528,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-25T13:59:52.284Z",
-    "duration": 196905.169,
-    "expected": 7,
+    "startTime": "2026-10-25T14:09:55.691Z",
+    "duration": 27230.693,
+    "expected": 12,
     "skipped": 0,
-    "unexpected": 5,
+    "unexpected": 0,
     "flaky": 0
   }
 }

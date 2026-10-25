@@ -1,0 +1,22 @@
+
+> moon-phase-3d@1.0.0 build
+> vite build
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 27 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                1.34 kB │ gzip:   0.76 kB
+dist/assets/inter-latin-400-C38fXH4l.woff2    23.66 kB
+dist/assets/inter-latin-500-Cerq10X2.woff2    24.27 kB
+dist/assets/inter-latin-700-Yt3aPRUw.woff2    24.35 kB
+dist/assets/inter-latin-600-LgqL8muc.woff2    24.45 kB
+dist/assets/noto-sans-sc-400-Dv_ROSg_.woff2   88.75 kB
+dist/assets/noto-sans-sc-500-cktltEHY.woff2   89.51 kB
+dist/assets/noto-sans-sc-600-NWUx1nnC.woff2   89.91 kB
+dist/assets/noto-sans-sc-700-BP4zTcdd.woff2   90.28 kB
+dist/assets/index-XMIDi1vc.css                17.30 kB │ gzip:   4.07 kB
+dist/assets/index-BBWjejWe.js                594.10 kB │ gzip: 155.33 kB
+
+✓ built in 281ms

@@ -156,24 +156,39 @@ test.describe('月相观测室', () => {
     await expect(page.locator('#date-input')).toBeFocused();
 
     const visited = [];
-    for (let i = 0; i < 24; i += 1) {
+    for (let i = 0; i < 40; i += 1) {
       await page.keyboard.press('Tab');
-      const id = await page.evaluate(() => {
+      const info = await page.evaluate(() => {
         const el = document.activeElement;
         if (!el) return null;
-        if (el.id) return `#${el.id}`;
-        if (el.classList?.contains('faq__question')) return '.faq__question';
-        if (el.tagName === 'A') return 'footer-link';
-        if (el.tagName === 'BUTTON') return el.getAttribute('aria-label') ?? 'button';
-        return el.tagName;
+        return {
+          tag: el.tagName,
+          id: el.id || null,
+          cls: typeof el.className === 'string' ? el.className : '',
+          label: el.getAttribute ? el.getAttribute('aria-label') : null,
+          inFooter: Boolean(el.closest ? el.closest('footer') : null),
+        };
       });
-      if (!id) break;
-      if (!visited.includes(id)) visited.push(id);
+      if (!info) break;
+      const key =
+        info.id ||
+        info.label ||
+        (info.inFooter ? 'footer-link' : info.cls.split(' ')[0]) ||
+        info.tag;
+      if (!visited.includes(key)) visited.push(key);
+      // "键盘观察"折叠面板里的方向按钮在展开后才进入 Tab 序列
+      if (info.tag === 'SUMMARY') {
+        await page.keyboard.press('Enter');
+        await page.waitForTimeout(80);
+      }
     }
-    expect(visited.indexOf('#timeline-range')).toBeGreaterThan(-1);
-    expect(visited.indexOf('#timeline-range')).toBeLessThan(visited.indexOf('button') + 1);
+    expect(visited.indexOf('timeline-range')).toBeGreaterThan(-1);
+    expect(visited.indexOf('timeline-range')).toBeLessThan(
+      visited.findIndex((item) => item.includes('播放') || item === 'button'),
+    );
     expect(visited.some((item) => item.includes('15 度'))).toBe(true);
-    expect(visited.some((item) => item === '.faq__question')).toBe(true);
+    expect(visited.some((item) => item.includes('10%'))).toBe(true);
+    expect(visited.some((item) => item === 'faq__question')).toBe(true);
     expect(visited.includes('footer-link')).toBe(true);
 
     await page.locator('#timeline-range').focus();

@@ -9,6 +9,17 @@
 - 规划案落点：handoff/plans/LOOP-001.md
 - 投递通道：A（网页**聊天模式**，不是工作/agent 模式；思考强度已确认为 **High**，模型选择器显示「6 High」）
 - 交接仓可见性：public（网页需匿名读取）
+- 投递通道结论：**通道 A**（网页聊天模式直接读公开仓链接并自行 push 规划案，`handoff/plans/LOOP-001.md` 的指纹头由网页原样回填，`handoff.sh verify` 通过）
+- 指纹校验：`handoff.sh verify --kind plan` → 校验通过（kind/task/round/nonce/brief_sha 全部匹配）
+- 规划案 commit：`4413476`
+
+## 本轮交付状态（sflipmloop 第 7–8 步已完成）
+
+- 实现 commit：见 `reports/latest.md` §1 的被测 SHA 与 §10 的偏离记录
+- 执行报告：`reports/latest.md`（含 AC01–AC09、逐条质量线对照、对比度机算值、证据索引）
+- 测试：单元 37/37、浏览器 12/12；`npm ci` / `npm test` / `npm run build` / `npm run test:e2e` / `check-dist` / `check-contrast` 退出码全 0
+- 外部请求 0、console error 0、pageerror 0
+- 结论：**READY_FOR_DELIVERY**
 
 ## 交接指纹（网页须原样回填到规划案开头）
 

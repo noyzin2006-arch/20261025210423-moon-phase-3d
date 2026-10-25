@@ -1,0 +1,17 @@
+对比度（WCAG 2.2 相对亮度公式）
+  ✔ 正文 text-main / 页面底 bg-page: 17.74:1（要求 ≥ 4.5:1）
+  ✔ 次正文 text-secondary / 卡片底 bg-card: 11.90:1（要求 ≥ 4.5:1）
+  ✔ 提示 text-muted / 卡片底 bg-card: 7.39:1（要求 ≥ 4.5:1）
+  ✔ 提示 text-muted / 页面底 bg-page: 8.33:1（要求 ≥ 4.5:1）
+  ✔ 强调字 text-on-accent / accent 底: 12.37:1（要求 ≥ 4.5:1）
+  ✔ 控件边框 border-control / bg-card: 3.62:1（要求 ≥ 3:1）
+  ✔ 控件边框 border-control / bg-raised: 3.20:1（要求 ≥ 3:1）
+  ✔ 焦点环 focus / bg-card: 11.76:1（要求 ≥ 3:1）
+  ✔ 焦点环 focus / bg-page: 13.25:1（要求 ≥ 3:1）
+  ✔ 禁用文字 disabled-text / disabled-bg: 5.76:1（要求 ≥ 2:1）
+  ✔ 错误 negative / bg-card: 8.83:1（要求 ≥ 4.5:1）
+  ✔ 成功 positive / bg-card: 10.29:1（要求 ≥ 4.5:1）
+  ✔ 信息 info / bg-card: 11.76:1（要求 ≥ 4.5:1）
+  ✔ 分组线 border-subtle / bg-page: 1.89:1（要求 ≥ 1.2:1）
+
+全部达标
