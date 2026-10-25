@@ -1,8 +1,8 @@
 {
-  "task": "做一个网页里的 3D 月相演示：讲清楚月亮为什么在空中会有不同形状（新月、月牙、半月、满月），可调日期看月相变化",
+  "task": "LOOP-001",
   "round1": {
-    "brief": "handoff/briefs/做一个网页里的 3D 月相演示：讲清楚月亮为什么在空中会有不同形状（新月、月牙、半月、满月），可调日期看月相变化.md",
-    "plan": "handoff/plans/做一个网页里的 3D 月相演示：讲清楚月亮为什么在空中会有不同形状（新月、月牙、半月、满月），可调日期看月相变化.md",
+    "brief": "handoff/briefs/LOOP-001.md",
+    "plan": "handoff/plans/LOOP-001.md",
     "guardedPaths": ["src","public","assets","styles","app","lib","js","css","tests","e2e","scripts","index.html","package.json","vite.config.js","tsconfig.json","playwright.config.js"]
   }
 }
