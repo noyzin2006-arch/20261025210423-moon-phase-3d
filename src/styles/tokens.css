@@ -1,0 +1,105 @@
+/*
+ * tokens.css —— 设计令牌唯一真源
+ * 组件与页面样式只允许引用这里的变量，不写裸 hex（除本文件）。
+ * 数值来自规划案 §3.1 的令牌表。
+ */
+
+:root {
+  /* 背景层 */
+  --bg-page: #080d18;
+  --bg-stage: #090f1d;
+  --bg-card: #101b2e;
+  --bg-raised: #19263a;
+  --bg-hover: #253a55;
+
+  /* 文字层 */
+  --text-main: #f1f5fa;
+  --text-secondary: #cad8e8;
+  --text-muted: #97acc3;
+  --text-on-accent: #080d18;
+
+  /* 边框层 */
+  --border-subtle: #304258;
+  --border-control: #64748b;
+
+  /* 强调与语义 */
+  --accent: #f6c77b;
+  --accent-hover: #ffe0a5;
+  --accent-pressed: #e8ae55;
+  --info: #92e0ff;
+  --positive: #4be0aa;
+  --caution: #f6c77b;
+  --negative: #efa7a7;
+  --focus: #92e0ff;
+
+  /* 禁用态 */
+  --disabled-bg: #19263a;
+  --disabled-text: #91a1b2;
+
+  /* 月面 */
+  --moon-dark: #050811;
+  --moon-fallback: #d5d2ca;
+
+  /* 间距：4px 基准栅格 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  /* 圆角 */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* 描边 */
+  --stroke-control: 1px;
+  --stroke-focus: 3px;
+  --focus-offset: 2px;
+
+  /* 阴影分层 */
+  --shadow-0: none;
+  --shadow-1: 0 8px 24px #00000030;
+  --shadow-2: 0 12px 32px #0000003d;
+  --shadow-3: 0 20px 48px #00000052;
+  --shadow-4: 0 28px 72px #0000006b;
+
+  /* 层级 */
+  --z-base: 0;
+  --z-panel: 10;
+  --z-popover: 20;
+  --z-modal: 30;
+  --z-toast: 40;
+
+  /* 动效 */
+  --motion-fast: 120ms;
+  --motion-normal: 240ms;
+  --motion-enter: 420ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* 尺寸 */
+  --target-min: 44px;
+  --field-height: 48px;
+  --stage-height-min: 320px;
+  --content-max: 1184px;
+  --prose-max: 40ch;
+
+  /* 图标 */
+  --icon-small: 16px;
+  --icon-regular: 20px;
+  --icon-large: 24px;
+  --icon-stroke: 2px;
+
+  /* 字体族 */
+  --font-latin: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-cjk: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC',
+    'Source Han Sans SC', sans-serif;
+  --font-sans: var(--font-latin), var(--font-cjk);
+}

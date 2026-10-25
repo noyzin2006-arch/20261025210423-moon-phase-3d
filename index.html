@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>月相观测室 · 3D 月球与月相演示</title>
+    <meta
+      name="description"
+      content="用真实的 3D 月球讲清一件事：月亮没有缺一块，变化的只是我们从地球看见多少被阳光照亮的部分。可以调整日期查看任意一天的月相。"
+    />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#080d18" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      window.addEventListener('error', function (e) {
+        document.title = 'ERR: ' + (e.message || e.error) + ' @ ' + (e.filename||'') + ':' + (e.lineno||'');
+        document.body.setAttribute('data-error', document.title);
+      });
+      window.addEventListener('unhandledrejection', function (e) {
+        document.title = 'REJ: ' + (e.reason && e.reason.message ? e.reason.message : e.reason);
+        document.body.setAttribute('data-error', document.title);
+      });
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

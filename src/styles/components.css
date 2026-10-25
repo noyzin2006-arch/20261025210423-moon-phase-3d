@@ -1,0 +1,629 @@
+/*
+ * components.css —— 组件规格（对应规划案 §3.2 / §3.3）
+ * 每个组件的九态在样式里给出默认/悬停/按下/聚焦/禁用/加载/错误/空/成功。
+ */
+
+/* ---------- C01 Header ---------- */
+.site-header__location {
+  flex: none;
+}
+
+/* ---------- C02 MoonStage ---------- */
+.stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--bg-stage);
+  border: var(--stroke-control) solid var(--border-subtle);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+}
+
+.stage__canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  border-radius: var(--radius-md);
+  background: radial-gradient(circle at 50% 45%, #0e1626 0%, #060a13 70%);
+  overflow: hidden;
+}
+
+.stage__canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.stage__canvas:active {
+  cursor: grabbing;
+}
+
+/* 2D 降级画布：覆盖在 WebGL 画布之上，仅在 WebGL 不可用时显示 */
+.stage__fallback-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+
+.stage__badge {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 32px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-pill);
+  background: #080d18d9;
+  border: var(--stroke-control) solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.stage__badge[data-variant='free'] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.stage__hint {
+  position: absolute;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: #080d18b3;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.stage__caption {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.stage__overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  text-align: center;
+  background: #080d18cc;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.stage__overlay[data-visible='true'] {
+  display: flex;
+}
+
+/* ---------- C03 EarthReference ---------- */
+.earth-ref {
+  position: absolute;
+  left: var(--space-3);
+  bottom: var(--space-3);
+  width: 116px;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: #101b2ef0;
+  border: var(--stroke-control) solid var(--border-subtle);
+  box-shadow: var(--shadow-1);
+}
+
+.earth-ref__canvas {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto;
+}
+
+.earth-ref__label {
+  margin-top: var(--space-2);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+/* ---------- 通用卡片 ---------- */
+.card {
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: var(--stroke-control) solid var(--border-subtle);
+  box-shadow: var(--shadow-1);
+}
+
+.card__title {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.card__hint {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* ---------- C04 DatePicker ---------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.field__label {
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--text-secondary);
+}
+
+.field__control {
+  height: var(--field-height);
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--bg-raised);
+  border: var(--stroke-control) solid var(--border-control);
+  color: var(--text-main);
+  font-size: 16px;
+  width: 100%;
+  min-width: 0;
+}
+
+.field__control:hover {
+  border-color: var(--text-muted);
+}
+
+.field__control:active {
+  border-color: var(--accent);
+}
+
+.field__control[aria-invalid='true'] {
+  border-color: var(--negative);
+}
+
+.field__message {
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--negative);
+  min-height: 21px;
+}
+
+.field__control:disabled {
+  background: var(--disabled-bg);
+  color: var(--disabled-text);
+  border-color: var(--border-subtle);
+  cursor: not-allowed;
+}
+
+/* ---------- C05 Timeline ---------- */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.timeline__track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.timeline__edge {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.timeline__range {
+  flex: 1;
+  min-width: 0;
+  height: var(--target-min);
+  background: transparent;
+  appearance: none;
+}
+
+.timeline__range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-raised);
+  border: var(--stroke-control) solid var(--border-subtle);
+}
+
+.timeline__range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg-page);
+  transition: transform var(--motion-fast) var(--ease-standard);
+}
+
+.timeline__range:hover::-webkit-slider-thumb {
+  transform: scale(1.08);
+}
+
+.timeline__range:active::-webkit-slider-thumb {
+  transform: scale(0.95);
+}
+
+.timeline__range::-moz-range-track {
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-raised);
+  border: var(--stroke-control) solid var(--border-subtle);
+}
+
+.timeline__range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg-page);
+}
+
+/* ---------- C06 Playback 与 C07 视角控制 ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--target-min);
+  min-width: var(--target-min);
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-sm);
+  border: var(--stroke-control) solid var(--border-control);
+  background: var(--bg-raised);
+  color: var(--text-main);
+  font-size: 16px;
+  line-height: 1.25;
+  transition: background-color var(--motion-fast) var(--ease-standard),
+    border-color var(--motion-fast) var(--ease-standard),
+    transform var(--motion-fast) var(--ease-standard);
+}
+
+.button:hover {
+  background: var(--bg-hover);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button[aria-disabled='true'],
+.button:disabled {
+  background: var(--disabled-bg);
+  color: var(--disabled-text);
+  border-color: var(--border-subtle);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--text-on-accent);
+  font-weight: 600;
+}
+
+.button--primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.button--primary:active {
+  background: var(--accent-pressed);
+  border-color: var(--accent-pressed);
+}
+
+.button__icon {
+  width: var(--icon-regular);
+  height: var(--icon-regular);
+  flex: none;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.button--wide {
+  min-width: 144px;
+}
+
+.keyboard-controls {
+  border: var(--stroke-control) solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+}
+
+.keyboard-controls > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-height: var(--target-min);
+  padding: 0 var(--space-4);
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 21px;
+  list-style: none;
+}
+
+.keyboard-controls > summary::-webkit-details-marker {
+  display: none;
+}
+
+.keyboard-controls > summary:hover {
+  color: var(--text-main);
+}
+
+.keyboard-controls__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: 0 var(--space-4) var(--space-4);
+}
+
+.keyboard-controls__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.keyboard-controls__grid .button {
+  padding: 0 var(--space-2);
+}
+
+/* ---------- C08 Summary ---------- */
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.summary__phase {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.summary__phase-name {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.summary__phase-en {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.summary__time {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 21px;
+  font-variant-numeric: tabular-nums;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--bg-raised);
+  border: var(--stroke-control) solid var(--border-subtle);
+}
+
+.metric__label {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+
+.metric__value {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-main);
+}
+
+.metric__value--small {
+  font-size: 16px;
+}
+
+.metric__note {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-muted);
+}
+
+/* ---------- C09 OrbitDiagram ---------- */
+.diagram {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.diagram__svg {
+  width: 100%;
+  height: auto;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: var(--stroke-control) solid var(--border-subtle);
+}
+
+.diagram__caption {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+/* ---------- C10 Explainers ---------- */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.faq__item {
+  border: var(--stroke-control) solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: var(--target-min);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 600;
+  list-style: none;
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question:hover {
+  color: var(--accent);
+}
+
+.faq__question::after {
+  content: '';
+  width: var(--icon-regular);
+  height: var(--icon-regular);
+  flex: none;
+  background: currentcolor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  transition: transform var(--motion-fast) var(--ease-standard);
+}
+
+.faq__item[open] .faq__question::after {
+  transform: rotate(180deg);
+}
+
+.faq__answer {
+  padding: 0 var(--space-4) var(--space-4);
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 26px;
+  max-width: var(--prose-max);
+}
+
+/* ---------- C11 Status ---------- */
+.status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 20px;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--text-secondary);
+}
+
+.status[data-kind='error'] {
+  color: var(--negative);
+}
+
+.status[data-kind='success'] {
+  color: var(--positive);
+}
+
+.status__icon {
+  width: var(--icon-small);
+  height: var(--icon-small);
+  flex: none;
+}
+
+/* ---------- C12 Footer ---------- */
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+}
+
+/* ---------- 移动端微调 ---------- */
+@media (max-width: 1023px) {
+  .stage__canvas-wrap {
+    height: 500px;
+  }
+}
+
+@media (max-width: 767px) {
+  .stage {
+    padding: var(--space-3);
+  }
+
+  .stage__canvas-wrap {
+    height: 380px;
+  }
+
+  .metrics {
+    gap: var(--space-2);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: var(--space-4);
+  }
+
+  .stage__canvas-wrap {
+    height: var(--stage-height-min);
+  }
+
+  .button--wide {
+    width: 100%;
+  }
+
+  .button-row {
+    gap: var(--space-2);
+  }
+}
